@@ -2,7 +2,7 @@
 
 A beautiful, interactive Enneagram personality test built with vanilla JavaScript. Discover your dominant type, explore your wing, and visualize your scores across all nine types.
 
-![Enneagram Compass](https://img.shields.io/badge/HTML-CSS-JS-orange)
+![Tech Stack](https://img.shields.io/badge/tech-HTML%2FCSS%2FJS-orange)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
 ## Features
