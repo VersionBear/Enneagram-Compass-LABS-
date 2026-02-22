@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enneagram Compass</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="panel panel-intro" id="introPanel">
+      <p class="kicker">Personality Discovery</p>
+      <h1>Enneagram Compass</h1>
+      <p class="lead">
+        Discover which Enneagram pattern most strongly shapes your motivations, stress triggers, and growth path.
+      </p>
+      <ul class="highlights">
+        <li>36 reflective prompts</li>
+        <li>About 6-8 minutes</li>
+        <li>Results with top type + wing hint</li>
+      </ul>
+      <button class="btn btn-primary" id="startBtn" type="button">Start Test</button>
+    </section>
+
+    <section class="panel panel-quiz hidden" id="quizPanel" aria-live="polite">
+      <div class="quiz-header">
+        <p class="kicker" id="questionCounter">Question 1 of 36</p>
+        <div class="progress-wrap" aria-label="Completion progress">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+      </div>
+      <h2 id="questionText"></h2>
+      <p class="hint">Rate how much each statement describes you.</p>
+
+      <div class="scale" role="group" aria-label="Answer scale">
+        <button type="button" class="scale-btn" data-value="1">Not at all</button>
+        <button type="button" class="scale-btn" data-value="2">Slightly</button>
+        <button type="button" class="scale-btn" data-value="3">Somewhat</button>
+        <button type="button" class="scale-btn" data-value="4">Mostly</button>
+        <button type="button" class="scale-btn" data-value="5">Very much</button>
+      </div>
+
+      <div class="quiz-actions">
+        <button class="btn btn-subtle" id="backBtn" type="button">Back</button>
+        <button class="btn btn-primary" id="nextBtn" type="button" disabled>Next</button>
+      </div>
+
+      <label class="auto-next-toggle" for="autoNextToggle">
+        <input type="checkbox" id="autoNextToggle" />
+        <span>Auto-advance to next question</span>
+      </label>
+    </section>
+
+    <section class="panel panel-results hidden" id="resultsPanel">
+      <p class="kicker">Your Enneagram Snapshot</p>
+      <h2 id="resultTitle"></h2>
+      <p id="resultSubtitle" class="lead"></p>
+      <p id="dynamicSummary" class="dynamic-summary"></p>
+
+      <article class="wing-card" id="wingCard">
+        <p class="kicker">Dominant Wing</p>
+        <p class="wing-pill" id="wingPill" tabindex="0">Wing insight loading...</p>
+        <p class="wing-copy" id="wingCopy"></p>
+      </article>
+
+      <p id="resultDescription"></p>
+
+      <label class="avg-toggle" for="averageToggle">
+        <input type="checkbox" id="averageToggle" />
+        <span id="averageLabel">Show average score baseline</span>
+      </label>
+
+      <div class="bars" id="scoreBars"></div>
+
+      <div class="next-steps">
+        <button class="btn btn-primary" type="button" id="shareFriendBtn">Share results with a friend</button>
+        <button class="btn btn-subtle" type="button" id="saveResultBtn">Save this result</button>
+      </div>
+
+      <div class="saved-results" id="savedResultsSection">
+        <h3>Your Saved Results</h3>
+        <div id="savedResultsList"></div>
+      </div>
+
+      <div class="result-actions">
+        <button class="btn btn-primary" type="button" id="retakeBtn">Retake Test</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="made-by">
+    Made by <a href="https://versionbear.itssljk.com" target="_blank" rel="noopener">VersionBear</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
